@@ -1,8 +1,109 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Inicio";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container-fluid p-5 bg-primary text-white text-center">
+    <h1 class="display-4 font-weight-bold">Bienvenido a Banco Prosperidad</h1>
+    <p class="lead">Tu aliado financiero para el éxito</p>
+    <p>Descubre cómo podemos ayudarte a alcanzar tus metas financieras.</p>
+    <a asp-area="" asp-controller="Home" asp-action="Nosotros" class="btn btn-light btn-lg mt-3">Conócenos</a>
 </div>
+
+<div class="container mt-5">
+    <div class="row text-center">
+        <div class="col-md-4">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">Cuentas de Ahorro</h5>
+                    <p class="card-text">Aumenta tus ahorros con nuestras cuentas que te ofrecen tasas competitivas y beneficios exclusivos.</p>
+                    <a href="#" class="btn btn-outline-primary">Saber más</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">Préstamos Personales</h5>
+                    <p class="card-text">Financia tus proyectos con los préstamos más flexibles y personalizados del mercado.</p>
+                    <a href="#" class="btn btn-outline-primary">Solicitar ahora</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">Tarjetas de Crédito</h5>
+                    <p class="card-text">Accede a los mejores beneficios y recompensas con nuestras tarjetas de crédito.</p>
+                    <a href="#" class="btn btn-outline-primary">Más información</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid p-5 bg-light text-center mt-5">
+    <h2 class="font-weight-bold">Por qué elegir Banco Prosperidad</h2>
+    <p class="lead">Tu bienestar financiero es nuestra prioridad</p>
+
+    <div class="row justify-content-center">
+        <div class="col-md-3">
+            <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+            <h5 class="font-weight-bold">Seguridad</h5>
+            <p>Protegemos tus finanzas con la tecnología más avanzada.</p>
+        </div>
+        <div class="col-md-3">
+            <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
+            <h5 class="font-weight-bold">Crecimiento</h5>
+            <p>Ofrecemos productos financieros diseñados para hacer crecer tu dinero.</p>
+        </div>
+        <div class="col-md-3">
+            <i class="fas fa-users fa-3x text-primary mb-3"></i>
+            <h5 class="font-weight-bold">Atención Personalizada</h5>
+            <p>Nos preocupamos por ti y por cada una de tus metas financieras.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Opcional: Agregar estilos personalizados para un toque profesional -->
+<style>
+    body {
+        background-color: #f0f2f5;
+    }
+    .bg-primary {
+        background-color: #004085 !important;
+    }
+
+    .text-primary {
+        color: #004085 !important;
+    }
+
+    .btn-outline-primary {
+        border-color: #004085;
+        color: #004085;
+    }
+
+    .btn-outline-primary:hover {
+        background-color: #004085;
+        color: #fff;
+    }
+
+    .card {
+        transition: transform 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+    }
+
+    h1, h2 {
+        font-weight: bold;
+    }
+
+    .container-fluid.bg-primary {
+        padding: 80px 0;
+        background-image: linear-gradient(135deg, #004085, #0056b3);
+    }
+</style>
+

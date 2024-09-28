@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "Nosotros";
+}
+
+<!-- Contenedor principal con fondo atractivo -->
+<div class="container-fluid mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <!-- Título de la página -->
+            <div class="text-center mb-4">
+                <h1 class="display-4 text-primary font-weight-bold">@ViewData["Title"]</h1>
+                <p class="lead">Conoce más sobre <strong>Banco Prosperidad</strong>, nuestro compromiso contigo y nuestros valores.</p>
+            </div>
+
+            <!-- Sección de Misión -->
+            <div class="card shadow mb-4 border-0">
+                <div class="card-body p-4">
+                    <h3 class="text-primary">Nuestra Misión</h3>
+                    <p>Ofrecer soluciones financieras accesibles y de calidad, contribuyendo al desarrollo económico de nuestros clientes y la comunidad.</p>
+                </div>
+            </div>
+
+            <!-- Sección de Visión -->
+            <div class="card shadow mb-4 border-0">
+                <div class="card-body p-4">
+                    <h3 class="text-primary">Nuestra Visión</h3>
+                    <p>Ser el banco de confianza para todos, reconocido por nuestra innovación, compromiso social y excelencia en el servicio.</p>
+                </div>
+            </div>
+
+            <!-- Sección de Valores -->
+            <div class="card shadow mb-4 border-0">
+                <div class="card-body p-4">
+                    <h3 class="text-primary">Nuestros Valores</h3>
+                    <ul class="list-unstyled">
+                        <li><strong>Integridad:</strong> Actuamos con transparencia y ética en todas nuestras operaciones.</li>
+                        <li><strong>Compromiso:</strong> Estamos dedicados al bienestar de nuestros clientes y la comunidad.</li>
+                        <li><strong>Innovación:</strong> Buscamos constantemente nuevas formas de mejorar nuestros servicios.</li>
+                        <li><strong>Excelencia:</strong> Nos esforzamos por ofrecer el mejor servicio en cada interacción.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sección de Contacto -->
+            <div class="text-center mt-4">
+                <p>Si deseas más información sobre nosotros, no dudes en <a href="mailto:contacto@bancoprosperidad.com" class="text-primary">contactarnos</a>.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Estilos personalizados -->
+<style>
+    body {
+        background-color: #f0f2f5;
+    }
+
+    .text-primary {
+        color: #0056b3 !important;
+    }
+
+    .card {
+        border-radius: 15px;
+    }
+
+    .card-body {
+        background-color: #fff;
+        border-radius: 15px;
+    }
+
+    .lead {
+        color: #555;
+    }
+
+    ul {
+        padding-left: 1.5rem;
+    }
+</style>
+
