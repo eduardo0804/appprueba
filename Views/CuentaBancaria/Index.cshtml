@@ -1,0 +1,139 @@
+@model appprueba.ViewModel.CuentaBancariaViewModel
+@{
+    ViewData["Title"] = "Registro de Cuentas";
+}
+
+<div class="container mt-5">
+    <!-- Mensaje de éxito -->
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Message"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <h1 class="text-center mb-4" style="color: #004085; font-weight: bold;">@ViewData["Title"]</h1>
+
+    <div class="row justify-content-center">
+        <!-- Formulario para registrar cuentas bancarias -->
+        <div class="col-lg-6">
+            <div class="card shadow-lg border-0">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="card-title text-center mb-0">Registro de Cuenta Bancaria</h5>
+                </div>
+                <div class="card-body p-4">
+                    <form asp-controller="CuentaBancaria" asp-action="Registrar" method="post">
+                        <input type="hidden" asp-for="FormCuentaBancaria.Id" />
+
+                        <!-- Nombre del Titular -->
+                        <div class="mb-3">
+                            <label asp-for="FormCuentaBancaria.NomTitular" class="form-label">Nombre del Titular</label>
+                            <input asp-for="FormCuentaBancaria.NomTitular" class="form-control" placeholder="Ingrese el nombre del titular" />
+                        </div>
+
+                        <!-- Tipo de Cuenta (Select con opción 'Otro') -->
+                        <div class="mb-3">
+                            <label asp-for="FormCuentaBancaria.TipoCuenta" class="form-label">Tipo de Cuenta</label>
+                            <select id="tipoCuentaSelect" asp-for="FormCuentaBancaria.TipoCuenta" class="form-control" onchange="mostrarOtroCampo()">
+                                <option value="">Seleccione el tipo de cuenta</option>
+                                <option value="Cuenta de Ahorros">Cuenta de Ahorros</option>
+                                <option value="Cuenta Corriente">Cuenta Corriente</option>
+                                <option value="Cuenta a Plazo Fijo">Cuenta a Plazo Fijo</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <!-- Campo adicional que aparece si selecciona 'Otro' -->
+                        <div class="mb-3" id="otroTipoCuentaDiv" style="display: none;">
+                            <label for="otroTipoCuenta" class="form-label">Especifique el tipo de cuenta</label>
+                            <input type="text" id="otroTipoCuenta" name="otroTipoCuenta" class="form-control" placeholder="Ingrese el tipo de cuenta" />
+                        </div>
+
+                        <!-- Saldo Inicial -->
+                        <div class="mb-3">
+                            <label asp-for="FormCuentaBancaria.SaldoInicial" class="form-label">Saldo Inicial</label>
+                            <input asp-for="FormCuentaBancaria.SaldoInicial" class="form-control" type="number" step="0.01" placeholder="Ingrese el saldo inicial" />
+                        </div>
+
+                        <!-- Correo Electrónico -->
+                        <div class="mb-3">
+                            <label asp-for="FormCuentaBancaria.Correo" class="form-label">Correo Electrónico</label>
+                            <input asp-for="FormCuentaBancaria.Correo" class="form-control" type="email" placeholder="Ingrese su correo electrónico" />
+                        </div>
+
+                        <!-- Botón para registrar -->
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success btn-lg">Registrar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Optional: Añadir estilos personalizados -->
+<style>
+    body {
+        background-color: #f7faff;
+    }
+
+    .card {
+        border-radius: 10px;
+    }
+
+    .btn-primary {
+        background-color: #004085;
+        border-color: #004085;
+    }
+
+    .btn-primary:hover {
+        background-color: #002752;
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        border-color: #28a745;
+    }
+
+    .btn-success:hover {
+        background-color: #218838;
+        border-color: #1e7e34;
+    }
+
+    .card-header {
+        font-size: 1.25rem;
+        font-weight: 600;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .form-control {
+        border: 1px solid #004085;
+        border-radius: 5px;
+    }
+
+    .form-label {
+        font-weight: 500;
+        color: #004085;
+    }
+</style>
+
+<!-- Script para mostrar/ocultar campo 'Otro' -->
+<script>
+    function mostrarOtroCampo() {
+        var select = document.getElementById("tipoCuentaSelect");
+        var otroDiv = document.getElementById("otroTipoCuentaDiv");
+
+        // Mostrar el campo de texto si la opción seleccionada es "Otro"
+        if (select.value === "Otro") {
+            otroDiv.style.display = "block";
+        } else {
+            otroDiv.style.display = "none";
+        }
+    }
+</script>
+
